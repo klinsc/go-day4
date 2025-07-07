@@ -8,7 +8,7 @@ import (
 	"github.com/caarlos0/env/v11"
 	"github.com/klinsc/config"
 	"github.com/klinsc/model"
-	"github.com/klinsc/student"
+	student "github.com/klinsc/students"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -42,10 +42,10 @@ func main() {
 }
 
 func insertValue(repo student.IRepository) {
-	student := &model.Student{
+	student := &model.Students{
 		Code: "0001",
 		Name: "Java",
-		Scores: []model.Score{
+		Scores: []model.Scores{
 			{
 				ExerciseDate: time.Date(2025, time.June, 20, 20, 30, 00, 00, time.Now().Location()),
 				Score:        20,

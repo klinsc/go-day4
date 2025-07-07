@@ -9,11 +9,9 @@ CREATE TABLE students(
 CREATE TABLE scores(
     id SERIAL PRIMARY KEY,
     exercise_date TIMESTAMP NOT NULL,
-    value BIGINT NOT NULL,
-    student_id BIGINT NOT NULL REFERENCES students(id) ON DELETE CASCADE
+    score INT NOT NULL,
+    student_id INT NOT NULL
 );
-
-CREATE INDEX idx_scores_student_id ON scores(student_id);
 -- +goose StatementEnd
 
 -- +goose Down
